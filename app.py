@@ -43,37 +43,37 @@ def suma(n1,n2):
     numero1 = int(n1)
     numero2 = int(n2)
     resultado = numero1+numero2 
-    return ("El resultado es: " + str(resultado))
+    return (f"El resultado de {n1} y {n2} es: {resultado}")
 
 @app.route('/resta/<n1>/<n2>')
 def resta(n1,n2):
     numero1 = int(n1)
     numero2 = int(n2)
     resultado = numero1-numero2 
-    return ("El resultado es: " + str(resultado))
+    return (f"El resultado de {n1} y {n2} es: {resultado}")
 
 @app.route('/division/<n1>/<n2>')
 def division(n1,n2):
     numero1 = int(n1)
     numero2 = int(n2)
     resultado = numero1/numero2 
-    return ("El resultado es: " + str(resultado))
+    return (f"El resultado de {n1} y {n2} es: {resultado}")
 
 @app.route('/multiplicar/<n1>/<n2>')
 def multiplicar(n1,n2):
     numero1 = int(n1)
     numero2 = int(n2)
     resultado = numero1*numero2 
-    return ("El resultado es: " + str(resultado))
+    return (f"El resultado de {n1} y {n2} es: {resultado}")
 
 @app.route('/diferencia/<n1>/<n2>')
 def diferencia(n1,n2):
     numero1 = int(n1)
     numero2 = int(n2)
     if numero1 > numero2:
-        return f"El número mayor es: {numero1}"
+        return (f"El número mayor es: {numero1} y el numero menor es {numero2}")
     else:
-        return f"El número mayor es: {numero2}"
+        return (f"El número mayor es: {numero2} y el numero menor es {numero1}")
 
 
 
