@@ -7,8 +7,9 @@ def Calculadora():
     return '''<h1>Bienvenido a la calculadora en python</h1>
                 <p>1. Para sumar escribe en el navegador 127.0.0.1:5000/suma/primer numero/segundo numero</p>
                 <p>2. Para restar escribe en el navegador 127.0.0.1:5000/resta/primer numero/segundo numero</p>
-                <p>3. Para dividir escribe en el navegador 127.0.0.1:5000/multiplicacion/primer numero/segundo numero</p>
-                <p>4. Para dividir escribe en el navegador 127.0.0.1:5000/divicion/primer numero/segundo numero</p>
+                <p>3. Para multiplicar escribe en el navegador 127.0.0.1:5000/multiplicacion/primer numero/segundo numero</p>
+                <p>4. Para dividir escribe en el navegador 127.0.0.1:5000/division/primer numero/segundo numero</p>
+                <p>5. Para diferencia escribe en el navegador 127.0.0.1:5000/diferencia/primer numero/segundo numero</p>
                 
                 <p> Mi nomnre: Sagarnaga Macias Jesus Antonio 
                     Grupo: 5-D</p>
@@ -42,40 +43,37 @@ def suma(n1,n2):
     numero1 = int(n1)
     numero2 = int(n2)
     resultado = numero1+numero2 
-    return (resultado)
+    return ("El resultado es: " + str(resultado))
 
 @app.route('/resta/<n1>/<n2>')
 def resta(n1,n2):
     numero1 = int(n1)
     numero2 = int(n2)
     resultado = numero1-numero2 
-    return str(resultado)
+    return ("El resultado es: " + str(resultado))
 
 @app.route('/division/<n1>/<n2>')
-def dividir(n1,n2):
+def division(n1,n2):
     numero1 = int(n1)
     numero2 = int(n2)
     resultado = numero1/numero2 
-    return str(resultado)
+    return ("El resultado es: " + str(resultado))
 
 @app.route('/multiplicar/<n1>/<n2>')
 def multiplicar(n1,n2):
     numero1 = int(n1)
     numero2 = int(n2)
     resultado = numero1*numero2 
-    return str(resultado)
+    return ("El resultado es: " + str(resultado))
 
-@app.route('/mayor/<n1>/<n2>')
-def mayor(n1,n2):
-    resultado=0
-    resultado = n1+n2
-    return (resultado)
-
-@app.route('/menor/<n1>/<n2>')
-def menor(n1,n2):
-    resultado=0
-    resultado = n1+n2
-    return (resultado)
+@app.route('/diferencia/<n1>/<n2>')
+def diferencia(n1,n2):
+    numero1 = int(n1)
+    numero2 = int(n2)
+    if numero1 > numero2:
+        return f"El número mayor es: {numero1}"
+    else:
+        return f"El número mayor es: {numero2}"
 
 
 
