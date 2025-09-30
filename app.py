@@ -4,16 +4,21 @@ app = Flask(__name__)
 
 @app.route('/')
 def Calculadora():
-    return '''<h1>Bienvenido a la calculadora en python</h1>
+    return ('''<h1>Bienvenido a la calculadora en python</h1>
                 <p>1. Para sumar escribe en el navegador 127.0.0.1:5000/suma/primer numero/segundo numero</p>
                 <p>2. Para restar escribe en el navegador 127.0.0.1:5000/resta/primer numero/segundo numero</p>
                 <p>3. Para multiplicar escribe en el navegador 127.0.0.1:5000/multiplicacion/primer numero/segundo numero</p>
                 <p>4. Para dividir escribe en el navegador 127.0.0.1:5000/division/primer numero/segundo numero</p>
-                <p>5. Para diferencia escribe en el navegador 127.0.0.1:5000/diferencia/primer numero/segundo numero</p>
+                <p>5. Para diferencia escribe en el navegador 127.0.0.1:5000/diferencia/primer numero/segundo numero</p>'''
                 
-                <p> Mi nomnre: Sagarnaga Macias Jesus Antonio 
-                    Grupo: 5-D</p>
-'''
+                ''' <h3> Datos de alumno</h3>
+                    <p> -Mi nomnre: Sagarnaga Macias Jesus Antonio </p>
+                    <p> -Grupo: 5-D </p>
+                    <p> -Numero de control: 23308060610335 </p>''')
+
+@app.route('/Mundo')
+def hola_mundo():
+    return '<h1>¡Hola Mundo !<h1>'
 
 @app.route('/otra')
 def hola_mundo1():
@@ -40,36 +45,36 @@ def factorial(v1):
 
 @app.route('/suma/<n1>/<n2>')
 def suma(n1,n2):
-    numero1 = int(n1)
-    numero2 = int(n2)
+    numero1 = float(n1)
+    numero2 = float(n2)
     resultado = numero1+numero2 
-    return (f"El resultado de {n1} y {n2} es: {resultado}")
+    return (f"El resultado de la suma entre {n1} y {n2} es: {resultado}")
 
 @app.route('/resta/<n1>/<n2>')
 def resta(n1,n2):
-    numero1 = int(n1)
-    numero2 = int(n2)
+    numero1 = float(n1)
+    numero2 = float(n2)
     resultado = numero1-numero2 
-    return (f"El resultado de {n1} y {n2} es: {resultado}")
+    return (f"El resultado de la resta entre {n1} y {n2} es: {resultado}")
 
 @app.route('/division/<n1>/<n2>')
 def division(n1,n2):
-    numero1 = int(n1)
-    numero2 = int(n2)
+    numero1 = float(n1)
+    numero2 = float(n2)
     resultado = numero1/numero2 
-    return (f"El resultado de {n1} y {n2} es: {resultado}")
+    return (f"El resultado de la division etre {n1} y {n2} es: {resultado}")
 
 @app.route('/multiplicar/<n1>/<n2>')
 def multiplicar(n1,n2):
-    numero1 = int(n1)
-    numero2 = int(n2)
+    numero1 = float(n1)
+    numero2 = float(n2)
     resultado = numero1*numero2 
-    return (f"El resultado de {n1} y {n2} es: {resultado}")
+    return (f"El resultado de la multiplicacion entre {n1} y {n2} es: {resultado}")
 
 @app.route('/diferencia/<n1>/<n2>')
 def diferencia(n1,n2):
-    numero1 = int(n1)
-    numero2 = int(n2)
+    numero1 = float(n1)
+    numero2 = float(n2)
     if numero1 > numero2:
         return (f"El número mayor es: {numero1} y el numero menor es {numero2}")
     else:
